@@ -1,5 +1,6 @@
 package au.edu.swin.sdmd.l06_detailedimages
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -23,7 +24,9 @@ class MainActivity : AppCompatActivity() {
 
         val vStation = findViewById<TextView>(R.id.station)
         vStation.setOnClickListener {
-
+            val intent = Intent(this, DetailActivity::class.java)
+            intent.putExtra("location", station)
+            startActivity(intent)
         }
     }
 }
